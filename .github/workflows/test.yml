@@ -1,0 +1,25 @@
+
+name: PipelineVerse Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  success-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Successful step
+        run: echo "Build successful"
+
+  failure-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intentional failure
+        run: exit 1
+
+  another-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running test
+        run: echo "Testing PipelineVerse"
